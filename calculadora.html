@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CALCULADORA TERMOCUÁNTICA</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="calculadora.css">
+</head>
+<body onload="initialize()">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.2/math.min.js"></script>
+	<script src="calculadora.js"></script>
+
+	<div id="titulo">
+		<h1>CALCULADORA TERMOCUÁNTICA</h1>
+		<label>Ingrese los datos solo con los botones</label> <br>
+	</div>
+	<div id="calculadora">
+		<span>Tute Corporation</span> <br>
+		<input id="pantallita" type="text" placeholder="0" disabled> 
+		<br>
+		<button onclick="print('(')" class="boton-parentesis" id="_("> ( </button>	
+		<button onclick="print('7')" class="boton-numero" id="_7"> 7  </button>
+		<button onclick="print('8')" class="boton-numero" id="_8"> 8 </button>
+		<button onclick="print('9')" class="boton-numero" id="_9"> 9 </button>
+		<button onclick="print('/')" class="boton-operacion" id="_/"> / </button> 
+		<button onclick="clean()" class="boton-borrar" id="_C"> C </button> 
+		<button onclick="print('sqrt')" class="boton-operacion" id="_C"> sqrt </button>
+		<br>
+		<button onclick="print(')')" class="boton-parentesis" id="_)"> ) </button>
+		<button onclick="print('4')" class="boton-numero" id="_4"> 4 </button>
+		<button onclick="print('5')" class="boton-numero" id="_5"> 5 </button>
+		<button onclick="print('6')" class="boton-numero" id="_6"> 6 </button> 
+		<button onclick="print('X')" class="boton-operacion" id="_X"> X </button> 
+		<button onclick="print('fact')" class="boton-operacion" id="_!n"> !n </button>
+		<button onclick="print('sin')" class="boton-operacion" id="_C"> sin </button>
+		<br>
+		<button onclick="print('e')" class="boton-constante" id="_e"> e </button>
+		<button onclick="print('1')" class="boton-numero" id="_1"> 1 </button> 
+		<button onclick="print('2')" class="boton-numero" id="_2"> 2 </button>
+		<button onclick="print('3')" class="boton-numero" id="_3"> 3 </button> 
+		<button onclick="print('-')" class="boton-operacion" id="_-"> - </button> 
+		<button onclick="print('^')" class="boton-operacion" id="_n^p"> n^p </button>
+		<button onclick="print('cos')" class="boton-operacion" id="_C"> cos </button>
+		<br>
+		<button onclick="print('pi')" class="boton-constante" id="_pi"> pi </button>
+		<button onclick="print('0')" class="boton-numero" id="_0"> 0 </button>
+		<button onclick="print('.')" class="boton-punto" id="_."> . </button>
+		<button onclick="print('+')" class="boton-operacion" id="_+"> + </button>
+		<button onclick="processExp()" class="boton-operacion" id="equal"> = </button>
+		<button onclick="print('tan')" class="boton-operacion" id="_C"> tan </button>
+	</div>
+
+	<img src="mujer calculando.jpg">
+
+	<footer id="pie_pagina">
+		<div class="linea">texto invisible</div>
+		<i id="pie_pagina_texto">@Copyright, Todos los derechos reservados por la empresa</i> <br>
+		<button onclick="changeBackground()" id="boton_tema">Cambiar tema</button> <br>
+		<button onclick="alert('System32 se eliminara en 15 segundos. XD')" id="boton_XD"> XD </button>
+	</footer>
+</body>
+</html>

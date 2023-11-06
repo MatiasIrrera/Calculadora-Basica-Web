@@ -1,0 +1,145 @@
+:root{
+	--fondo_pantalla: #0B3B0B;
+	--color_placeholder: black;
+	--color_textos:white;
+}
+
+*{
+	background-color: var(--fondo_pantalla);
+}
+
+body{
+	margin:0;
+	margin-bottom: 2%;
+	text-align: center;
+}
+
+/* ----------------  MODIFICACION DE LA CALCULADORA  ---------------------------- */
+
+input{
+	color: black;
+	background-color: lime;
+	height: 7%;
+	width: 80%;
+	margin-bottom: 2%;
+	font-family: monospace;
+	font-size: 20px;
+}
+
+input::placeholder{
+	color: var(--color_placeholder);
+	opacity: 1;
+}
+
+#calculadora{
+	background-color: #000000;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	margin-right: 41%;
+	margin-left: 41%;
+	border-radius: 20px;
+}
+
+#calculadora span{
+	background-color: #2E2E2E;
+	color: white;
+	font-style: italic;
+	position: relative;
+	right: 25%;
+}
+
+/* ----------------  MODIFICACION DE BOTONES  ---------------------------- */
+
+#_0 {
+	width: 84px;
+}
+
+button {
+	width: 40px;
+	height: 40px;
+	border-radius: 15px;
+	font-family: sans-serif
+}
+
+.boton-numero{
+	background-color: orange;
+}
+
+.boton-punto{
+	background-color: orange;
+}
+
+.boton-operacion{
+	background-color: lightblue;
+}
+
+.boton-borrar{
+	background-color: lightblue;
+}
+
+.boton-constante{
+	background-color: yellow;
+}
+
+.boton-parentesis{
+	background-color: yellow;
+}
+
+#equal{
+	background-color: red;
+}
+
+/* ----------------  MODIFICACION DE TEXTOS  ---------------------------- */
+
+h1{
+	color: var(--color_textos);
+	font-family: sans-serif;
+}
+
+label{
+	color: var(--color_textos);
+	font-family: Georgia;
+}
+
+#titulo{
+	margin-bottom: 1%;	
+}
+
+/* ----------------  MODIFICACION DE IMAGEN  ---------------------------- */
+
+img{
+	margin-top: 2%;
+	height:540px; 
+	width:35%;
+}
+
+/* ----------------  MODIFICACION PIE DE PÁGINA  ---------------------------- */
+
+#pie_pagina{
+	margin-top: 2%;
+}
+
+.linea{
+	background-color: black;
+	font-size: 0;
+	height: 3px;
+	margin-bottom: 1%;
+}
+
+#boton_tema{
+	background-color: lightgray; 
+	height: 1%;
+	width: 5%;
+	margin-top: 1%;
+}
+
+#pie_pagina_texto{
+	color: var(--color_textos);
+}
+
+#boton_XD{
+	background-color: lightgray; 
+	height: 1%;
+	width: 5%;
+	margin-top: 1%;
+}
