@@ -53,21 +53,6 @@ function changeBackground()
 //Imprime el dato ingresado con los botones
 function print(dato)
 {
-/*	if(!isNaN(dato) || dato=="+" || dato=="-" || dato=="X" || dato=="/" || dato=="." || dato=="e" || dato=="pi" || dato=="(" || dato==")")
-		document.getElementById("pantallita").value += dato;	
-	else if(dato=="!")
-	{
-		let exp = document.getElementById("pantallita").value;
-		document.getElementById("pantallita").value = `fact(${exp})`;
-	}
-	else if(dato=="^")
-		document.getElementById("pantallita").value += "^";
-	else if(dato=="sin" || dato=="cos" || dato=="tan")
-	{
-		let exp = document.getElementById("pantallita").value;
-		document.getElementById("pantallita").value = `${dato}(${exp})`;
-	}
-*/
 	document.getElementById("pantallita").value += dato
 }
 
