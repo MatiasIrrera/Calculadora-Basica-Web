@@ -16,17 +16,17 @@ body{
 
 /* ----------------  MODIFICACION DE LA CALCULADORA  ---------------------------- */
 
-input{
-	color: black;
+#pantallita{
+	color: var(--color_placeholder);
 	background-color: lime;
 	height: 7%;
-	width: 80%;
+	width: 83.5%;
 	margin-bottom: 2%;
 	font-family: monospace;
 	font-size: 20px;
 }
 
-input::placeholder{
+#pantallita::placeholder{
 	color: var(--color_placeholder);
 	opacity: 1;
 }
@@ -41,7 +41,7 @@ input::placeholder{
 }
 
 #calculadora span{
-	background-color: #2E2E2E;
+	background-color: #000000;
 	color: white;
 	font-style: italic;
 	position: relative;
@@ -51,12 +51,12 @@ input::placeholder{
 /* ----------------  MODIFICACION DE BOTONES  ---------------------------- */
 
 #_0 {
-	width: 84px;
+	width: 6.2em;
 }
 
 button {
-	width: 40px;
-	height: 40px;
+	width: 3em;
+	height: 3em;
 	border-radius: 15px;
 	font-family: sans-serif
 }
@@ -109,8 +109,8 @@ label{
 
 img{
 	margin-top: 2%;
-	height:540px; 
-	width:35%;
+	height:32em; 
+	width:36em;
 }
 
 /* ----------------  MODIFICACION PIE DE PÁGINA  ---------------------------- */
@@ -139,7 +139,7 @@ img{
 
 #boton_XD{
 	background-color: lightgray; 
-	height: 1%;
-	width: 5%;
+	height: 2em;
+	width: 2%;
 	margin-top: 1%;
 }

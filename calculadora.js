@@ -1,9 +1,29 @@
 //"use strict";
 
 //Inicializa la pantalla de la calculadora
+math.config({
+  	number: 'BigNumber',      // Default type of number:
+                            // 'number' (default), 'BigNumber', or 'Fraction'
+  	precision: 509,            // Number of significant digits for BigNumbers
+  	epsilon: 1e-128
+})
+
 function initialize()
 {
 	document.getElementById("pantallita").value = null;
+}
+
+function limit(num)
+{
+	let n = math.bignumber(num); 
+	let x = math.abs(n);
+
+	if(math.compare(x, '1e+508') == 1 || math.compare(x, '1e+508') == 0)
+		n = "Infinity";
+	else if(math.compare(x, '1e-508') == -1)
+		n = 0;
+
+	return n;
 }
 
 //Cambia el color del fondo al presionar el boton
@@ -72,21 +92,12 @@ function sendError(name)
 	document.getElementById("pantallita").placeholder = name;
 }
 
-//Redondea un numero de forma normal hasta cierta cantidad de decimales
-function roundNum(num, num_dec)
-{
-	let i = 10**num_dec;
-	return Math.round(num*i)/i;
-}
-
 //Resuelve matemáticamente la expresión ingresada
 function solve(exp)
 {
-	let scope = {
-	}
+	let scope = {}
 	let exp_compiled = math.parse(exp).compile();
 	let r = exp_compiled.evaluate(scope);
-	console.log("resultado: " + r);
 	return r;
 }
 
@@ -98,14 +109,16 @@ function processExp()
 	let expresion_HTML = document.getElementById("pantallita").value;
 	
 	//reemplazamos los "X" que aparezcan por los "*" para que solve() lo tome bien
-	expresion = expresion_HTML.replace(/X/g, "*");
+	expresion = expresion_HTML.replace(/x/g, "*");
 	//reemplazamos en donde diga "fact" por "factorial" para que solve() lo tome bien
 	expresion = expresion.replace(/fact/g, "factorial");
 	console.log("ingresado: " + expresion);
 
 	try{
-		//resultado = eval(expresion);
 		resultado = solve(expresion);
+		console.log("resultado: " + resultado);
+		resultado = limit(resultado);
+		console.log("resultado limitado: " + resultado);
 	}
 	catch(error){
 		sendError(error.name);
@@ -113,9 +126,11 @@ function processExp()
 	}
 
 	if(resultado != undefined){
-		if(resultado == "Infinity" || isNaN(resultado))
+		if(resultado == "Infinity" || resultado == "-Infinity" || isNaN(resultado))
 			sendError("MathError");
-		else
-			document.getElementById("pantallita").value = roundNum(resultado, 14);	
+		else{
+			document.getElementById("pantallita").value = resultado; //Aca se muestra el resultado en pantalla
+		}
+				
 	}
 }
